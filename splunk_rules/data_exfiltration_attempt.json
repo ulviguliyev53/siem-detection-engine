@@ -1,0 +1,10 @@
+{
+    "name": "Data_Exfiltration_Attempt",
+    "search": "index=\"millisec\" sourcetype=\"dlp\" action=\"blocked\" | stats count by user, file_name",
+    "cron_schedule": "*/5 * * * *",
+    "is_scheduled": "1",
+    "alert_type": "number of events",
+    "alert_comparator": "greater than",
+    "alert_threshold": "0",
+    "description": "Həssas məlumatların (FİN, Kredit kartı) kənara (USB/Cloud) çıxarılması cəhdi DLP tərəfindən bloklandı."
+}
