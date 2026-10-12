@@ -1,0 +1,10 @@
+{
+    "name": "SOC_Privilege_Escalation",
+    "search": "index=\"millisec\" sourcetype=\"wineventlog:security\" EventCode=4732 Group_Name=\"*Administrators*\" | stats count by user",
+    "cron_schedule": "*/5 * * * *",
+    "is_scheduled": "1",
+    "alert_type": "number of events",
+    "alert_comparator": "greater than",
+    "alert_threshold": "0",
+    "description": "Göstərilən istifadəçi 'Administrators' qrupuna əlavə edildi (Yetki yüksəldilməsi)."
+}
