@@ -1,0 +1,10 @@
+{
+    "name": "OWASP_A07_Brute_Force_Attempt",
+    "search": "index=\"millisec\" sourcetype=\"_json\" status=401 | stats count by ip | where count > 5",
+    "cron_schedule": "*/5 * * * *",
+    "is_scheduled": "1",
+    "alert_type": "number of events",
+    "alert_comparator": "greater than",
+    "alert_threshold": "0",
+    "description": "Eyni IP-dən qisa muddetde 5-den cox xetali giris (401) cehdi."
+}
