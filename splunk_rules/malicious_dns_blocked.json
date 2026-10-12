@@ -1,0 +1,10 @@
+{
+    "name": "Malicious_DNS_Request_Blocked",
+    "search": "index=\"Network_Security\" sourcetype=\"dns\" query_ip=\"0.0.0.0\" | stats count by src_ip, query",
+    "cron_schedule": "*/5 * * * *",
+    "is_scheduled": "1",
+    "alert_type": "number of events",
+    "alert_comparator": "greater than",
+    "alert_threshold": "0",
+    "description": "Daxili şəbəkədən zərərli C2 domaininə sorğu atıldı və DNS Sinkhole tərəfindən bloklandı."
+}
