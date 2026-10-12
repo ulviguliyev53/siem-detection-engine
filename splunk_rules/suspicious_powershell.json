@@ -1,0 +1,10 @@
+{
+    "name": "SOC_Suspicious_PowerShell",
+    "search": "index=\"millisec\" sourcetype=\"wineventlog:powershell\" (Message=\"*EncodedCommand*\" OR Message=\"*Hidden*\" OR Message=\"*Bypass*\") | stats count by host",
+    "cron_schedule": "*/5 * * * *",
+    "is_scheduled": "1",
+    "alert_type": "number of events",
+    "alert_comparator": "greater than",
+    "alert_threshold": "0",
+    "description": "Gizlədilmiş və ya Base64 ilə şifrələnmiş təhlükəli PowerShell əmri işə salındı."
+}
