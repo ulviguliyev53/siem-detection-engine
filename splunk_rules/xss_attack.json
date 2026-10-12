@@ -1,0 +1,10 @@
+{
+    "name": "OWASP_A03_XSS_Attack",
+    "search": "index=\"millisec\" (uri_query=\"*<script>*\" OR uri_query=\"*alert(*\" OR uri_query=\"*onerror=*\") | stats count by ip",
+    "cron_schedule": "*/5 * * * *",
+    "is_scheduled": "1",
+    "alert_type": "number of events",
+    "alert_comparator": "greater than",
+    "alert_threshold": "0",
+    "description": "Zərərli XSS payloadları təsbit edildi."
+}
