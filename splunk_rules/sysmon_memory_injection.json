@@ -1,0 +1,10 @@
+{
+    "name": "SOC_CobaltStrike_Memory_Injection",
+    "search": "index=\"millisec\" sourcetype=\"sysmon\" (EventCode=8 OR EventCode=10) | stats count by host, process_name",
+    "cron_schedule": "*/5 * * * *",
+    "is_scheduled": "1",
+    "alert_type": "number of events",
+    "alert_comparator": "greater than",
+    "alert_threshold": "0",
+    "description": "Sysmon: Yaddaşa inyeksiya (CreateRemoteThread / Process Access) təsbit edildi. Ehtimal olunan Cobalt Strike fəaliyyəti."
+}
