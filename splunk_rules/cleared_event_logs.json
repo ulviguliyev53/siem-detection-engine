@@ -1,0 +1,10 @@
+{
+    "name": "CRITICAL_Event_Logs_Cleared",
+    "search": "index=\"millisec\" sourcetype=\"wineventlog:security\" (EventCode=1102 OR EventCode=104) | stats count by user, host",
+    "cron_schedule": "*/5 * * * *",
+    "is_scheduled": "1",
+    "alert_type": "number of events",
+    "alert_comparator": "greater than",
+    "alert_threshold": "0",
+    "description": "Sistemdə Windows Audit Logları (Event Viewer) silindi! Hücumçu izlərini gizlədir."
+}
