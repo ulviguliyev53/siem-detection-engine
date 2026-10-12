@@ -1,0 +1,27 @@
+name: Deploy SIEM Rules
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Kodu kopyala (Checkout code)
+        uses: actions/checkout@v3
+
+      - name: Python-u qur
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Kitabxanaları yüklə
+        run: pip install requests
+
+      - name: Deploy Skriptini İşlət
+        env:
+          SPLUNK_URL: ${{ secrets.SPLUNK_URL }}
+          SPLUNK_TOKEN: ${{ secrets.SPLUNK_TOKEN }}
+        run: python deploy_rules.py
