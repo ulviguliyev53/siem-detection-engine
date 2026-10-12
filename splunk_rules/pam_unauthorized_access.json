@@ -1,0 +1,10 @@
+{
+    "name": "Privileged_Access_Anomaly",
+    "search": "index=\"millisec\" sourcetype=\"wineventlog:security\" EventCode=4624 LogonType=10 NOT src_ip=\"*PAM_SERVER_IP*\" | stats count by user",
+    "cron_schedule": "*/5 * * * *",
+    "is_scheduled": "1",
+    "alert_type": "number of events",
+    "alert_comparator": "greater than",
+    "alert_threshold": "0",
+    "description": "Serverlərə PAM (Teleport/Guacamole) xarici birbaşa RDP/SSH bağlantısı cəhdi."
+}
